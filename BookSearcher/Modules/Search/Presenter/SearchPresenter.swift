@@ -8,6 +8,8 @@
 
 import UIKit
 
-class SearchPresenter {
-
+class SearchPresenter: SearchViewOutputProtocol {
+    func updateData(query: String) {
+        
+    }
 }

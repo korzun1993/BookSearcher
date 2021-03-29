@@ -1,5 +1,5 @@
 //
-//  SearchViewInputProtocol.swift
+//  ReadingModesDTO.swift
 //  BookSearcher
 //
 //  Created by Vladyslav Korzun on 30.03.2021.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol SearchViewInputProtocol {
-    
+class ReadingModesDTO: Codable {
+    var text: Bool
+    var image: Bool
 }

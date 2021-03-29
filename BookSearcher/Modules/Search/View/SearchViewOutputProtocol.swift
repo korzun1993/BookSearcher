@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol SearchViewOutputProtocol {
+    func updateData(query: String)
+}

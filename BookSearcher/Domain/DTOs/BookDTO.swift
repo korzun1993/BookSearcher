@@ -6,8 +6,14 @@
 //  Copyright © 2021 VladyslavKorzun. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class BookDTO: NSObject {
-
+class BookDTO: Codable {
+    var kind: String
+    var id: String
+    var etag: String
+    var selfLink: String
+    var volumeInfo: VolumeInfoDTO
+    var saleInfo: SalesInfoDTO
+    var accessInfo: AccessInfoDTO
 }

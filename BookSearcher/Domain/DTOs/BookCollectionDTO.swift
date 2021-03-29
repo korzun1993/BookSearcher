@@ -1,5 +1,5 @@
 //
-//  SearchViewInputProtocol.swift
+//  BookCollection.swift
 //  BookSearcher
 //
 //  Created by Vladyslav Korzun on 30.03.2021.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol SearchViewInputProtocol {
-    
+class BookCollection: Codable {
+    var kind: String
+    var totalItems: Int
+    var items: [BookDTO]
 }

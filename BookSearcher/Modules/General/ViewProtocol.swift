@@ -6,4 +6,12 @@
 //  Copyright © 2021 VladyslavKorzun. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol ViewProtocol {
+    var viewController: UIViewController { get }
+}
+
+extension ViewProtocol where Self: UIViewController {
+    var viewController: UIViewController { return self }
+}

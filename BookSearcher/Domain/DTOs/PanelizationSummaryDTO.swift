@@ -1,5 +1,5 @@
 //
-//  SearchViewInputProtocol.swift
+//  PanelizationSummaryDTO.swift
 //  BookSearcher
 //
 //  Created by Vladyslav Korzun on 30.03.2021.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol SearchViewInputProtocol {
-    
+class PanelizationSummaryDTO: Codable {
+    var containsEpubBubbles: Bool
+    var containsImageBubbles: Bool
 }
