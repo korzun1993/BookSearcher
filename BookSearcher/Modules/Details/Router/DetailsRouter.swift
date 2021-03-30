@@ -8,6 +8,6 @@
 
 import UIKit
 
-class DetailsRouter {
+class DetailsRouter: BaseRouter, DetailsRouterProtocol {
 
 }

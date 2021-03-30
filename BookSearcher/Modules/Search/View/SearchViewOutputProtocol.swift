@@ -10,4 +10,5 @@ import Foundation
 
 protocol SearchViewOutputProtocol {
     func updateData(query: String)
+    func selectItem(index: Int)
 }

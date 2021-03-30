@@ -8,10 +8,9 @@
 
 import UIKit
 
-class SearchRouter: SearchRouterProtocol {
-    private weak var view: ViewProtocol!
-    
-    init(view: ViewProtocol) {
-        self.view = view
+class SearchRouter: BaseRouter, SearchRouterProtocol {    
+    func openDetails(book: BookDTO) {
+        let viewController = DetailsConfigurator.createDetailsView(book: book).viewController
+        view.viewController.navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2021 VladyslavKorzun. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class DetailsInteractor {
+class DetailsInteractor: DetailsInteractorProtocol {
 
 }

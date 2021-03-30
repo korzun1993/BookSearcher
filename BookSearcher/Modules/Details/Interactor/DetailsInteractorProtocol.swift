@@ -1,5 +1,5 @@
 //
-//  SearchRouterProtocol.swift
+//  DetailsInteractorProtocol.swift
 //  BookSearcher
 //
 //  Created by Vladyslav Korzun on 30.03.2021.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SearchRouterProtocol {
-    func openDetails(book: BookDTO)
+protocol DetailsInteractorProtocol {
+    
 }

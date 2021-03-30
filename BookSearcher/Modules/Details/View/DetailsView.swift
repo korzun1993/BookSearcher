@@ -8,23 +8,26 @@
 
 import UIKit
 
-class DetailsView: UIViewController {
+class DetailsView: UIViewController, DetailsViewInputProtocol, ViewProtocol {
 
+    @IBOutlet private weak var thumbnail: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var authorsLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    
+    var viewOutput: DetailsViewOutputProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewOutput.loadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func show(details: DetailsPresenterBookVM) {
+        if let thumbnailUrl = details.thumbnailUrl {
+            thumbnail.af_setImage(withURL: thumbnailUrl)
+        }
+        titleLabel.text = details.title
+        authorsLabel.text = details.author
+        descriptionLabel.text = details.description
     }
-    */
-
 }

@@ -8,6 +8,10 @@
 
 import UIKit
 
-class DetailsPresenter {
-
+class DetailsPresenter: BasePresenter<DetailsViewInputProtocol, DetailsInteractorProtocol, DetailsRouterProtocol>, DetailsViewOutputProtocol {
+    var book: BookDTO!
+    
+    func loadData() {
+        view.show(details: DetailsPresenterBookVMFactory.createViewModel(dto: book))
+    }
 }

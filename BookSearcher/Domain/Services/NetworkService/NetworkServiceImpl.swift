@@ -19,5 +19,6 @@ class NetworkServiceImpl: NetworkService {
         Alamofire.request(url).response { response in
             completion(try? JSONDecoder().decode(BookCollection.self, from: response.data!))
         }
+        //TODO: Handle networking errors
     }
 }

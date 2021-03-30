@@ -8,18 +8,9 @@
 
 import Foundation
 
-class SearchPresenter: SearchViewOutputProtocol {
-    private let interactor: SearchInteractorProtocol
-    private weak var view: SearchViewInputProtocol!
-    private let router: SearchRouterProtocol
+class SearchPresenter: BasePresenter<SearchViewInputProtocol, SearchInteractorProtocol, SearchRouterProtocol>, SearchViewOutputProtocol {
     
     private var data: [BookDTO] = []
-    
-    init(view: SearchViewInputProtocol, interactor: SearchInteractorProtocol, router: SearchRouterProtocol) {
-        self.view = view
-        self.interactor = interactor
-        self.router = router
-    }
     
     func updateData(query: String) {
         interactor.loadData(query: query) { [weak self] collection in
@@ -30,5 +21,9 @@ class SearchPresenter: SearchViewOutputProtocol {
     func setup(data: [BookDTO]) {
         self.data = data
         view.updateUI(data: data.map { SearchPresenterBookVMFactory.createViewModel(dto: $0) })
+    }
+    
+    func selectItem(index: Int) {
+        router.openDetails(book: data[index])
     }
 }

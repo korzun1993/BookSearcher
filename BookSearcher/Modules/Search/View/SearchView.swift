@@ -15,22 +15,27 @@ class SearchView: UIViewController, SearchViewInputProtocol, ViewProtocol {
     
     var viewOutput: SearchViewOutputProtocol!
     
-    var items: [SearchPresenterBookVM] = []
+    var items: [SearchPresenterBookVM] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.titleView = searchBar
     }
     
-    func updateUI(data: [SearchPresenterBookVM]) {
-        items = data
-        tableView.reloadData()
-    }
+    func updateUI(data: [SearchPresenterBookVM]) { items = data }
 }
 
 extension SearchView: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewOutput.updateData(query: searchBar.text ?? "")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.window?.endEditing(true)
     }
 }
 
@@ -44,5 +49,10 @@ extension SearchView: UITableViewDataSource, UITableViewDelegate {
                                                  for: indexPath)
         (cell as? SearchViewTableViewCell)?.setup(data: items[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewOutput.selectItem(index: indexPath.row)
     }
 }

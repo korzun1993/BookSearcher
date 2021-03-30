@@ -27,4 +27,5 @@ class VolumeInfoDTO: Codable {
     var previewLink: String
     var infoLink: String
     var canonicalVolumeLink: String
+    var description: String?
 }
