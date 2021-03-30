@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ViewProtocol {
+protocol ViewProtocol: class {
     var viewController: UIViewController { get }
 }
 

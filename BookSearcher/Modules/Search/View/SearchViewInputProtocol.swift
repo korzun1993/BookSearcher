@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SearchViewInputProtocol {
-    
+protocol SearchViewInputProtocol: class {
+    func updateUI(data: [SearchPresenterBookVM])
 }

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol SearchInteractorProtocol {
+    func loadData(query: String, completion: @escaping BooksCallback) 
+}

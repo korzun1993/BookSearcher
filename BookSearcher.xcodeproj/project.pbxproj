@@ -42,6 +42,10 @@
 		8C73C47F2612932E00F50E3D /* ReadingModesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73C47E2612932E00F50E3D /* ReadingModesDTO.swift */; };
 		8C73C481261293BD00F50E3D /* PanelizationSummaryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73C480261293BD00F50E3D /* PanelizationSummaryDTO.swift */; };
 		8C73C4832612940200F50E3D /* ImageLinksDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73C4822612940200F50E3D /* ImageLinksDTO.swift */; };
+		8C73C4862612A10D00F50E3D /* SearchViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73C4852612A10D00F50E3D /* SearchViewTableViewCell.swift */; };
+		8C73C4882612A67B00F50E3D /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73C4872612A67B00F50E3D /* Storyboard.swift */; };
+		8C73C48A2612A7FE00F50E3D /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73C4892612A7FE00F50E3D /* ApplicationRouter.swift */; };
+		8C73C48D2612AFDD00F50E3D /* SearchPresenterBookVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73C48C2612AFDD00F50E3D /* SearchPresenterBookVMFactory.swift */; };
 		D3D494A7B7B4BF7A94D37FD1 /* Pods_BookSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B31FE7047B5D262C08ECBF /* Pods_BookSearcherTests.framework */; };
 		E8313CB1DF0FE3732D6B37D2 /* Pods_BookSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482B29DE63C5C200DA0C6623 /* Pods_BookSearcher.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +102,10 @@
 		8C73C47E2612932E00F50E3D /* ReadingModesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingModesDTO.swift; sourceTree = "<group>"; };
 		8C73C480261293BD00F50E3D /* PanelizationSummaryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelizationSummaryDTO.swift; sourceTree = "<group>"; };
 		8C73C4822612940200F50E3D /* ImageLinksDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLinksDTO.swift; sourceTree = "<group>"; };
+		8C73C4852612A10D00F50E3D /* SearchViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewTableViewCell.swift; sourceTree = "<group>"; };
+		8C73C4872612A67B00F50E3D /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		8C73C4892612A7FE00F50E3D /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
+		8C73C48C2612AFDD00F50E3D /* SearchPresenterBookVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterBookVMFactory.swift; sourceTree = "<group>"; };
 		93369FF52745D2B695FA58A6 /* Pods-BookSearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSearcher.release.xcconfig"; path = "Target Support Files/Pods-BookSearcher/Pods-BookSearcher.release.xcconfig"; sourceTree = "<group>"; };
 		B0AA019917342299BC32AFED /* Pods-BookSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSearcher.debug.xcconfig"; path = "Target Support Files/Pods-BookSearcher/Pods-BookSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		C469823148C204990187D54D /* Pods-BookSearcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSearcherTests.release.xcconfig"; path = "Target Support Files/Pods-BookSearcherTests/Pods-BookSearcherTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 			children = (
 				8C2FDD1026114BC800810CD7 /* AppDelegate.swift */,
 				8C73C46D261287B900F50E3D /* Settings.swift */,
+				8C73C4892612A7FE00F50E3D /* ApplicationRouter.swift */,
 				8C2FDD5226126F8A00810CD7 /* Domain */,
 				8C2FDD3126114C8D00810CD7 /* Modules */,
 				8C73C46F261288C300F50E3D /* Helpers */,
@@ -218,6 +227,7 @@
 				8C2FDD5526127D4400810CD7 /* SearchViewInputProtocol.swift */,
 				8C2FDD5726127E6200810CD7 /* SearchViewOutputProtocol.swift */,
 				8C2FDD3426114E6D00810CD7 /* SearchView.swift */,
+				8C73C4842612A0DD00F50E3D /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				8C2FDD3A26114ED600810CD7 /* SearchPresenter.swift */,
+				8C73C48B2612AF6A00F50E3D /* Factories */,
 				8C2FDD64261281D200810CD7 /* ViewModels */,
 			);
 			path = Presenter;
@@ -360,8 +371,25 @@
 			isa = PBXGroup;
 			children = (
 				8C73C470261288DA00F50E3D /* URLBuilder.swift */,
+				8C73C4872612A67B00F50E3D /* Storyboard.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8C73C4842612A0DD00F50E3D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8C73C4852612A10D00F50E3D /* SearchViewTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8C73C48B2612AF6A00F50E3D /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				8C73C48C2612AFDD00F50E3D /* SearchPresenterBookVMFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		EB0B7FDA48397AA8DE4B842D /* Pods */ = {
@@ -543,18 +571,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C73C4882612A67B00F50E3D /* Storyboard.swift in Sources */,
 				8C2FDD4726114F5900810CD7 /* DetailsRouter.swift in Sources */,
 				8C2FDD3526114E6D00810CD7 /* SearchView.swift in Sources */,
 				8C2FDD5626127D4400810CD7 /* SearchViewInputProtocol.swift in Sources */,
 				8C73C471261288DA00F50E3D /* URLBuilder.swift in Sources */,
 				8C73C47B261291C800F50E3D /* AccessInfoAttributeDTO.swift in Sources */,
 				8C2FDD1126114BC800810CD7 /* AppDelegate.swift in Sources */,
+				8C73C48D2612AFDD00F50E3D /* SearchPresenterBookVMFactory.swift in Sources */,
 				8C73C481261293BD00F50E3D /* PanelizationSummaryDTO.swift in Sources */,
 				8C2FDD3B26114ED600810CD7 /* SearchPresenter.swift in Sources */,
 				8C2FDD6126127F9200810CD7 /* NetworkServiceImpl.swift in Sources */,
 				8C2FDD4126114F2A00810CD7 /* DetailsInteractor.swift in Sources */,
 				8C2FDD3F26114F0F00810CD7 /* SearchRouter.swift in Sources */,
 				8C73C47D261292EA00F50E3D /* IndustryIdentifiersDTO.swift in Sources */,
+				8C73C4862612A10D00F50E3D /* SearchViewTableViewCell.swift in Sources */,
 				8C2FDD6326127FAB00810CD7 /* BookDTO.swift in Sources */,
 				8C2FDD3926114EBE00810CD7 /* SearchInteractor.swift in Sources */,
 				8C73C47F2612932E00F50E3D /* ReadingModesDTO.swift in Sources */,
@@ -572,6 +603,7 @@
 				8C73C4792612910F00F50E3D /* AccessInfoDTO.swift in Sources */,
 				8C2FDD662612822400810CD7 /* SearchPresenterBookVM.swift in Sources */,
 				8C2FDD4526114F4A00810CD7 /* DetailsConfigurator.swift in Sources */,
+				8C73C48A2612A7FE00F50E3D /* ApplicationRouter.swift in Sources */,
 				8C73C47326128F3800F50E3D /* BookCollectionDTO.swift in Sources */,
 				8C73C475261290CC00F50E3D /* VolumeInfoDTO.swift in Sources */,
 			);

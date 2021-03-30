@@ -4,7 +4,8 @@
 target 'BookSearcher' do
   use_frameworks!
 
-  pod 'Alamofire', '4.0'
+  pod 'Alamofire', '4.7'
+  pod 'AlamofireImage', '3.4'
 
   target 'BookSearcherTests' do
     inherit! :search_paths

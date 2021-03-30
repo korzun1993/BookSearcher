@@ -8,6 +8,10 @@
 
 import UIKit
 
-class SearchRouter {
-
+class SearchRouter: SearchRouterProtocol {
+    private weak var view: ViewProtocol!
+    
+    init(view: ViewProtocol) {
+        self.view = view
+    }
 }
